@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kegiatan Sekolah | Sekolah Kristen Galatia Bekasi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        :root {
+            --biru: #167AFC;
+            --biru-terang: #2196F3;
+            --biru-tua: #1264AD;
+            --biru-muda: #EAF6FF;
+            --kuning: #FFD65A;
+            --putih: #FFFFFF;
+            --teks: #27364B;
+            --abu: #64748B;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--teks);
+            background: white;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* HEADER */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(22, 122, 252, 0.97);
+            box-shadow: 0 4px 18px rgba(18, 100, 173, 0.15);
+            backdrop-filter: blur(12px);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            min-height: 88px;
+            margin: auto;
+            padding: 12px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .brand img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        .brand-text h2 {
+            color: white;
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .brand-text p {
+            color: var(--kuning);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 23px;
+            border-radius: 30px;
+            background: var(--kuning);
+            color: var(--biru-tua);
+            font-size: 14px;
+            font-weight: 800;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            background: white;
+            color: var(--biru);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 360px;
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(18, 100, 173, 0.88),
+                    rgba(22, 122, 252, 0.72)
+                ),
+                url("kegiatan-hero.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 9px 18px;
+            margin-bottom: 20px;
+            border-radius: 30px;
+            background: var(--kuning);
+            color: var(--biru-tua);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .hero h1 {
+            margin-bottom: 18px;
+            color: white;
+            font-size: clamp(35px, 5vw, 58px);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--kuning);
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto;
+            color: white;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* BAGIAN KEGIATAN */
+        .activity-section {
+            padding: 85px 5%;
+            background: linear-gradient(
+                180deg,
+                #F2F9FF 0%,
+                #FFFFFF 100%
+            );
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 17px;
+            border-radius: 30px;
+            background: var(--biru-muda);
+            color: var(--biru);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 15px;
+            color: var(--biru-tua);
+            font-size: clamp(27px, 4vw, 40px);
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .section-heading h2 span {
+            color: var(--biru);
+        }
+
+        .section-heading p {
+            color: var(--abu);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* GRID FOTO KEGIATAN */
+        .activity-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .activity-card {
+            position: relative;
+            min-height: 300px;
+            overflow: hidden;
+            border-radius: 20px;
+            background: var(--biru-muda);
+            box-shadow: 0 8px 28px rgba(18, 100, 173, 0.10);
+            transition: transform 0.35s, box-shadow 0.35s;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 38px rgba(22, 122, 252, 0.20);
+        }
+
+        .activity-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .activity-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .activity-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(10, 48, 90, 0.92) 0%,
+                rgba(10, 48, 90, 0.35) 45%,
+                rgba(10, 48, 90, 0.02) 100%
+            );
+        }
+
+        .activity-number {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            z-index: 2;
+            width: 39px;
+            height: 39px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--kuning);
+            color: var(--biru-tua);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .activity-info {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            padding: 25px;
+            color: white;
+        }
+
+        .activity-tag {
+            display: inline-block;
+            padding: 6px 11px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            background: var(--kuning);
+            color: var(--biru-tua);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .activity-info h3 {
+            margin-bottom: 9px;
+            color: white;
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .activity-info p {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* PENUTUP */
+        .closing {
+            padding: 70px 5%;
+            text-align: center;
+            background: var(--biru-muda);
+        }
+
+        .closing-content {
+            max-width: 760px;
+            margin: auto;
+        }
+
+        .closing h2 {
+            margin-bottom: 17px;
+            color: var(--biru-tua);
+            font-size: clamp(25px, 4vw, 36px);
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .closing p {
+            margin-bottom: 25px;
+            color: var(--abu);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .closing-button {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 30px;
+            background: var(--biru);
+            color: white;
+            font-size: 13px;
+            font-weight: 800;
+            transition: background 0.3s;
+        }
+
+        .closing-button:hover {
+            background: var(--biru-tua);
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 27px 5%;
+            text-align: center;
+            background: var(--biru-tua);
+            color: white;
+        }
+
+        .footer p {
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .footer span {
+            color: var(--kuning);
+            font-weight: 800;
+        }
+
+        /* ANIMASI */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .activity-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+            }
+
+            .activity-card {
+                min-height: 280px;
+            }
+        }
+
+        /* HP */
+        @media (max-width: 600px) {
+            .header-container {
+                min-height: 76px;
+                padding: 10px 4%;
+            }
+
+            .brand {
+                gap: 9px;
+            }
+
+            .brand img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .brand-text h2 {
+                font-size: 14px;
+            }
+
+            .brand-text p {
+                font-size: 10px;
+            }
+
+            .nav-menu a {
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 300px;
+                padding: 60px 6%;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+            .activity-section {
+                padding: 60px 5%;
+            }
+
+            .section-heading {
+                margin-bottom: 30px;
+            }
+
+            .activity-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .activity-card {
+                min-height: 300px;
+            }
+
+            .activity-info {
+                padding: 22px;
+            }
+
+            .closing {
+                padding: 55px 6%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+
+            <a href="index.html" class="brand">
+                <img src="logo-sekolah.png"
+                     alt="Logo Sekolah Kristen Galatia">
+
+                <div class="brand-text">
+                    <h2>Galatia</h2>
+                    <p>BEKASI</p>
+                </div>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html">Beranda</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-label">SEKOLAH KRISTEN GALATIA</span>
+
+            <h1>Rangkuman <span>Kegiatan</span></h1>
+
+            <p>
+                Mengabadikan momen berharga dalam setiap proses belajar,
+                berkarya, bermain, dan bertumbuh bersama keluarga besar
+                Sekolah Kristen Galatia.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOTO KEGIATAN -->
+    <section class="activity-section" id="kegiatan">
+
+        <div class="section-heading reveal">
+            <span class="section-label">MOMEN KEBERSAMAAN</span>
+
+            <h2>Kegiatan <span>Sekolah Kami</span></h2>
+
+            <p>
+                Beragam aktivitas yang menjadi bagian dari perjalanan
+                pendidikan, pengembangan potensi, dan pembentukan
+                karakter peserta didik.
+            </p>
+        </div>
+
+        <div class="activity-grid">
+
+            <!-- KEGIATAN 1 -->
+            <article class="activity-card reveal">
+                <img src="kegiatan1.jpg"
+                     alt="Kegiatan pembelajaran siswa"
+                     loading="lazy">
+
+                <span class="activity-number">01</span>
+
+                <div class="activity-info">
+                    <span class="activity-tag">PEMBELAJARAN</span>
+                    <h3>Belajar Bersama</h3>
+                    <p>
+                        Menumbuhkan rasa ingin tahu dan semangat belajar
+                        melalui pengalaman yang bermakna.
+                    </p>
+                </div>
+            </article>
+
+            <!-- KEGIATAN 2 -->
+            <article class="activity-card reveal">
+                <img src="kegiatan2.jpg"
+                     alt="Kegiatan seni dan kreativitas"
+                     loading="lazy">
+
+                <span class="activity-number">02</span>
+
+                <div class="activity-info">
+                    <span class="activity-tag">KREATIVITAS</span>
+                    <h3>Seni dan Kreativitas</h3>
+                    <p>
+                        Memberikan ruang bagi siswa untuk berkarya,
+                        berimajinasi, dan mengekspresikan diri.
+                    </p>
+                </div>
+            </article>
+
+            <!-- KEGIATAN 3 -->
+            <article class="activity-card reveal">
+                <img src="kegiatan3.jpg"
+                     alt="Kegiatan olahraga siswa"
+                     loading="lazy">
+
+                <span class="activity-number">03</span>
+
+                <div class="activity-info">
+                    <span class="activity-tag">OLAHRAGA</span>
+                    <h3>Aktif dan Sehat</h3>
+                    <p>
+                        Membangun kebugaran, kerja sama, dan semangat
+                        sportivitas melalui aktivitas fisik.
+                    </p>
+                </div>
+            </article>
+
+            <!-- KEGIATAN 4 -->
+            <article class="activity-card reveal">
+                <img src="kegiatan4.jpg"
+                     alt="Kegiatan perayaan sekolah"
+                     loading="lazy">
+
+                <span class="activity-number">04</span>
+
+                <div class="activity-info">
+                    <span class="activity-tag">PERAYAAN</span>
+                    <h3>Perayaan dan Kebersamaan</h3>
+                    <p>
+                        Menciptakan kenangan indah melalui momen
+                        kebersamaan warga sekolah.
+                    </p>
+                </div>
+            </article>
+
+            <!-- KEGIATAN 5 -->
+            <article class="activity-card reveal">
+                <img src="kegiatan5.jpg"
+                     alt="Kegiatan belajar di luar kelas"
+                     loading="lazy">
+
+                <span class="activity-number">05</span>
+
+                <div class="activity-info">
+                    <span class="activity-tag">EKSPLORASI</span>
+                    <h3>Belajar dari Lingkungan</h3>
+                    <p>
+                        Mengenal lingkungan sekitar dan memperoleh
+                        pengalaman belajar yang menyenangkan.
+                    </p>
+                </div>
+            </article>
+
+            <!-- KEGIATAN 6 -->
+            <article class="activity-card reveal">
+                <img src="kegiatan6.jpg"
+                     alt="Kegiatan pendidikan karakter"
+                     loading="lazy">
+
+                <span class="activity-number">06</span>
+
+                <div class="activity-info">
+                    <span class="activity-tag">KARAKTER</span>
+                    <h3>Bertumbuh dalam Karakter</h3>
+                    <p>
+                        Membiasakan sikap disiplin, tanggung jawab,
+                        kepedulian, dan kasih kepada sesama.
+                    </p>
+                </div>
+            </article>
+
+            <!-- KEGIATAN 7 -->
+            <article class="activity-card reveal">
+                <img src="kegiatan7.jpg"
+                     alt="Kegiatan membaca dan literasi"
+                     loading="lazy">
+
+                <span class="activity-number">07</span>
+
+                <div class="activity-info">
+                    <span class="activity-tag">LITERASI</span>
+                    <h3>Gemar Membaca</h3>
+                    <p>
+                        Mengembangkan kebiasaan membaca dan memperluas
+                        pengetahuan melalui kegiatan literasi.
+                    </p>
+                </div>
+            </article>
+
+            <!-- KEGIATAN 8 -->
+            <article class="activity-card reveal">
+                <img src="kegiatan8.jpg"
+                     alt="Kegiatan kerja kelompok siswa"
+                     loading="lazy">
+
+                <span class="activity-number">08</span>
+
+                <div class="activity-info">
+                    <span class="activity-tag">KERJA SAMA</span>
+                    <h3>Berkarya Bersama</h3>
+                    <p>
+                        Belajar saling membantu, menghargai pendapat,
+                        dan menyelesaikan tugas bersama.
+                    </p>
+                </div>
+            </article>
+
+            <!-- KEGIATAN 9 -->
+            <article class="activity-card reveal">
+                <img src="kegiatan9.jpg"
+                     alt="Kegiatan kebersamaan warga sekolah"
+                     loading="lazy">
+
+                <span class="activity-number">09</span>
+
+                <div class="activity-info">
+                    <span class="activity-tag">KEBERSAMAAN</span>
+                    <h3>Kenangan Bersama</h3>
+                    <p>
+                        Mengabadikan pengalaman berharga dalam perjalanan
+                        belajar dan bertumbuh di sekolah.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- PENUTUP -->
+    <section class="closing reveal">
+        <div class="closing-content">
+            <h2>
+                Mendidik dengan Kasih,<br>
+                Bertumbuh dengan Sukacita
+            </h2>
+
+            <p>
+                Setiap kegiatan menjadi kesempatan untuk belajar,
+                membangun persahabatan, dan mengembangkan potensi
+                bersama Sekolah Kristen Galatia.
+            </p>
+
+            <a href="index.html" class="closing-button">
+                &larr; Kembali ke Beranda
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>
+            &copy; 2026 <span>Sekolah Kristen Galatia</span> | Bekasi.
+            Semua Hak Dilindungi.
+        </p>
+    </footer>
+
+    <!-- ANIMASI SCROLL -->
+    <script>
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12
+            });
+
+            revealElements.forEach(element => {
+                observer.observe(element);
+            });
+        } else {
+            revealElements.forEach(element => {
+                element.classList.add("show");
+            });
+        }
+    </script>
+
+</body>
+</html>

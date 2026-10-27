@@ -1,0 +1,841 @@
+
+/* =====================================
+   RESET DAN PENGATURAN DASAR
+===================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #27364b;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+:root {
+    --navy: #172b49;
+    --navy-light: #243e61;
+    --gold: #c5a044;
+    --gold-light: #e7d29a;
+    --text: #596579;
+    --cream: #f7f6f1;
+}
+
+/* =====================================
+   HEADER DENGAN FOTO BACKGROUND
+===================================== */
+.profil-header {
+    min-height: 125px;
+    padding: 20px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+
+    position: relative;
+    z-index: 10;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(221, 225, 144, 0.94),
+            rgba(4, 78, 251, 0.686)
+        ),
+        url("bg-sekolah.png");
+
+    background-size: cover;
+    background-position: center top 25%;
+    background-repeat: no-repeat;
+
+    border-bottom: 3px solid var(--gold);
+    box-shadow: 0 5px 25px rgb(240, 232, 7);
+}
+
+/* BRAND */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    text-decoration: none;
+    color: rgb(25, 94, 254);
+}
+
+.brand img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+.brand-divider {
+    width: 2px;
+    height: 58px;
+    background: var(--gold);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.brand-text strong {
+    color: rgb(9, 9, 243);
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.brand-text small {
+    color: rgb(9,9,243);
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+/* NAVIGASI */
+.navigation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.navigation a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: var(--gold-light);
+    transition: width 0.3s ease;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: var(--gold-light);
+}
+
+.navigation a:hover::after,
+.navigation a.active::after {
+    width: 100%;
+}
+
+/* =====================================
+   HERO / BANNER PROFIL
+===================================== */
+.hero-profil {
+    min-height: 460px;
+    padding: 80px 9%;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    color: white;
+
+    background-image: url("sma3.jpeg");
+    background-size: cover;
+    background-position: center 45%;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(16, 33, 57, 0.93) 0%,
+            rgba(20, 39, 65, 0.75) 55%,
+            rgba(20, 39, 65, 0.30) 100%
+        );
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero-label {
+    display: inline-block;
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 6vw, 76px);
+    font-weight: 700;
+    line-height: 1.12;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: var(--gold-light);
+}
+
+.hero-content > p {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #f1f3f7;
+    margin-bottom: 30px;
+}
+
+.btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 14px 24px;
+    border-radius: 5px;
+
+    background: var(--gold);
+    color: #172b49;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+.btn-gold span {
+    font-size: 19px;
+}
+
+.hero-decoration {
+    position: absolute;
+    right: -15px;
+    bottom: 0;
+
+    color: rgba(255, 255, 255, 0.07);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(70px, 15vw, 200px);
+    font-weight: 800;
+    line-height: 1;
+    pointer-events: none;
+}
+
+
+
+/* =====================================
+   LABEL DAN JUDUL
+===================================== */
+.section-label {
+    color: #dfdcd5;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+/* =====================================
+   TENTANG KAMI
+===================================== */
+.tentang-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+
+    padding: 105px 9%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 107, 239, 0.566) 0%,
+            rgb(6, 102, 238) 55%,
+            rgba(8, 60, 232, 0.854) 100%
+        );
+}
+
+.tentang-image {
+    position: relative;
+    padding: 0 0 22px 22px;
+}
+
+.tentang-image::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 75%;
+    height: 75%;
+
+    background: var(--gold);
+    border-radius: 5px;
+}
+
+.tentang-image img {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+    width: 100%;
+    height: 410px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(23, 43, 73, 0.15);
+}
+
+.image-caption {
+    position: absolute;
+    z-index: 2;
+    right: -15px;
+    bottom: 38px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 18px;
+    background: rgb(147, 143, 2);
+    box-shadow: 0 5px 25px rgba(231, 250, 22, 0.1);
+}
+
+.caption-line {
+    width: 25px;
+    height: 3px;
+    background: #cdcd14;
+}
+
+.image-caption p {
+    font-size: 11px;
+    font-weight: 800;
+    color: #1710ec;
+}
+
+.tentang-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 3.4vw, 43px);
+    line-height: 1.3;
+    color: #e5ce05;
+    margin: 17px 0 25px;
+}
+
+.tentang-content h2 span {
+    color: #f2e419;
+}
+
+.tentang-content > p:not(.quote) {
+    font-size: 14px;
+    line-height: 2;
+    color: #e6e5ed;
+    margin-bottom: 17px;
+}
+
+.tentang-divider {
+    width: 65px;
+    height: 3px;
+    background: var(--gold);
+    margin: 27px 0 18px;
+}
+
+.tentang-content .quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    line-height: 1.8;
+    font-style: italic;
+    color: var(--navy);
+}
+
+/* =====================================
+   BAGIAN VISI MISI
+===================================== */
+.visi-misi-section {
+    padding: 100px 9% 110px;
+    background: 
+        radial-gradient(
+            circle at 10% 10%,
+            rgb(24, 107, 250),
+            transparent 95%
+        ),
+        var(--cream);
+}
+
+.section-heading {
+    max-width: 680px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 49px);
+    color: var(--navy);
+    margin: 15px 0;
+}
+
+.section-heading h2 span {
+    color: #eae60e;
+}
+
+.section-heading > p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* GRID KARTU */
+.visi-misi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* KARTU VISI DAN MISI */
+.vm-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    min-height: 370px;
+    padding: 38px 38px 42px;
+
+    background: #038bfa;
+    border: 1px solid #e9e5d9;
+    border-top: 4px solid var(--gold);
+    border-radius: 9px;
+
+    box-shadow: 0 12px 35px rgba(23, 43, 73, 0.06);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 45px rgba(23, 43, 73, 0.13);
+    border-top-color: var(--navy-light);
+}
+
+.misi-card {
+    border-top-color: var(--navy-light);
+}
+
+/* BARIS ATAS KARTU */
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.card-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #f6f0df;
+    color: #9d7927;
+}
+
+.card-icon svg {
+    width: 29px;
+    height: 29px;
+}
+
+.misi-card .card-icon {
+    background: #eaf0f7;
+    color: var(--navy);
+}
+
+.card-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #e8e3d7;
+}
+
+/* TIPOGRAFI KARTU */
+.card-label {
+    color: #a47d24;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.vm-card h3 {
+    position: relative;
+    z-index: 1;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    line-height: 1.3;
+    color: var(--navy);
+
+    margin: 10px 0 17px;
+}
+
+.gold-line {
+    width: 48px;
+    height: 3px;
+    background: var(--gold);
+    margin-bottom: 23px;
+}
+
+.vm-card > p {
+    position: relative;
+    z-index: 1;
+
+    font-size: 14px;
+    line-height: 2;
+    color: var(--text);
+}
+
+/* DAFTAR MISI */
+.misi-list {
+    position: relative;
+    z-index: 1;
+
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.misi-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+.check {
+    flex: 0 0 23px;
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1px;
+    border-radius: 50%;
+
+    background: #f5efd9;
+    color: #9d7927;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* WATERMARK DEKORATIF */
+.card-watermark {
+    position: absolute;
+    right: -8px;
+    bottom: -27px;
+    z-index: -1;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 105px;
+    font-weight: 800;
+
+    color: rgba(23, 43, 73, 0.035);
+    pointer-events: none;
+}
+
+/* =====================================
+   BAGIAN PENUTUP
+===================================== */
+.penutup-section {
+    position: relative;
+    padding: 90px 8%;
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(4, 99, 232, 0.94),
+            rgba(238, 241, 17, 0.94)
+        ),
+        url("bg-sekolah.png");
+
+    background-size: cover top;
+    background-position: center top 30%;
+}
+
+.penutup-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.penutup-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.35;
+    margin: 18px 0;
+}
+
+.penutup-content > p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #1456f0;
+    margin-bottom: 27px;
+}
+
+.penutup-section .section-label {
+    color: var(--gold-light);
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+.profil-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    padding: 25px 7%;
+    background: #1456f0;
+    color: #dce2ec;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.footer-brand img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.profil-footer > p {
+    font-size: 11px;
+    color: #b9c2d0;
+}
+
+/* =====================================
+   ANIMASI SCROLL ATAS DAN BAWAH
+===================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* GERAKAN KHUSUS FOTO */
+.tentang-image.reveal {
+    transform: translateX(-45px);
+}
+
+.tentang-image.reveal.show {
+    transform: translateX(0);
+}
+
+/* GERAKAN KHUSUS KONTEN */
+.tentang-content.reveal {
+    transform: translateX(45px);
+}
+
+.tentang-content.reveal.show {
+    transform: translateX(0);
+}
+
+/* HORMATI PENGATURAN AKSESIBILITAS */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal,
+    .tentang-image.reveal,
+    .tentang-content.reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* =====================================
+   RESPONSIVE TABLET DAN HP
+===================================== */
+@media (max-width: 900px) {
+    .profil-header {
+        justify-content: center;
+    }
+
+    .navigation {
+        justify-content: center;
+        gap: 22px;
+    }
+
+    .tentang-section {
+        gap: 40px;
+        padding: 75px 6%;
+    }
+
+    .visi-misi-section {
+        padding: 75px 6%;
+    }
+
+    .vm-card {
+        padding: 30px 25px 35px;
+    }
+}
+
+@media (max-width: 650px) {
+    .profil-header {
+        padding: 20px 5%;
+        gap: 24px;
+    }
+
+    .brand img {
+        width: 62px;
+        height: 62px;
+    }
+
+    .brand-text strong {
+        font-size: 25px;
+    }
+
+    .brand-divider {
+        height: 48px;
+    }
+
+    .navigation {
+        gap: 16px 20px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+
+    .hero-profil {
+        min-height: 380px;
+        padding: 65px 7%;
+        background-position: center;
+    }
+
+    .hero-content h1 {
+        font-size: 43px;
+    }
+
+    .hero-content > p {
+        font-size: 14px;
+    }
+
+    .hero-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .tentang-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 65px 7%;
+    }
+
+    .tentang-image img {
+        height: 300px;
+    }
+
+    .image-caption {
+        right: -5px;
+        bottom: 32px;
+    }
+
+    .tentang-content h2 {
+        font-size: 32px;
+    }
+
+    .visi-misi-section {
+        padding: 70px 6%;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .visi-misi-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .vm-card {
+        min-height: auto;
+        padding: 30px 25px 38px;
+    }
+
+    .vm-card h3 {
+        font-size: 29px;
+    }
+
+    .penutup-section {
+        padding: 70px 7%;
+    }
+
+    .profil-footer {
+        justify-content: center;
+        text-align: center;
+        padding: 25px 6%;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+}

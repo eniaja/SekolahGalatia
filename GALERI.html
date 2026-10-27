@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeri | Sekolah Kristen Galatia Bekasi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        :root {
+            --biru: #167AFC;
+            --biru-terang: #2196F3;
+            --biru-tua: #1264AD;
+            --biru-muda: #EAF6FF;
+            --kuning: #FFD65A;
+            --putih: #FFFFFF;
+            --teks: #27364B;
+            --abu: #64748B;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--teks);
+            background: var(--putih);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        /* HEADER */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: rgba(22, 122, 252, 0.97);
+            box-shadow: 0 4px 18px rgba(18, 100, 173, 0.15);
+            backdrop-filter: blur(12px);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            min-height: 88px;
+            margin: auto;
+            padding: 12px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .brand img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        .brand-text h2 {
+            color: white;
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .brand-text p {
+            color: var(--kuning);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 23px;
+            border-radius: 30px;
+            color: var(--biru-tua);
+            background: var(--kuning);
+            font-size: 14px;
+            font-weight: 800;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            background: white;
+            color: var(--biru);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 440px;
+            padding: 100px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            isolation: isolate;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(18, 100, 173, 0.88),
+                    rgba(22, 122, 252, 0.68)
+                ),
+                url("galeri-hero.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            color: white;
+            animation: fadeUp 1s ease both;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 9px 18px;
+            margin-bottom: 22px;
+            border-radius: 30px;
+            background: var(--kuning);
+            color: var(--biru-tua);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 62px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--kuning);
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: white;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        /* GALERI */
+        .gallery-section {
+            padding: 90px 5%;
+            background: linear-gradient(
+                180deg,
+                #F2F9FF 0%,
+                #FFFFFF 100%
+            );
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 17px;
+            border-radius: 30px;
+            background: var(--biru-muda);
+            color: var(--biru);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 17px;
+            color: var(--biru-tua);
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .section-heading h2 span {
+            color: var(--biru);
+        }
+
+        .section-heading p {
+            color: var(--abu);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* GRID GALERI */
+        .gallery-grid {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: white;
+            border: 1px solid #E6F0FA;
+            box-shadow: 0 8px 28px rgba(18, 100, 173, 0.08);
+            transition: transform 0.35s, box-shadow 0.35s;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 38px rgba(22, 122, 252, 0.16);
+        }
+
+        .gallery-image {
+            height: 245px;
+            overflow: hidden;
+            position: relative;
+            background: var(--biru-muda);
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-card:hover .gallery-image img {
+            transform: scale(1.08);
+        }
+
+        .gallery-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--kuning);
+            color: var(--biru-tua);
+            font-size: 13px;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-info {
+            padding: 23px;
+        }
+
+        .gallery-info h3 {
+            margin-bottom: 10px;
+            color: var(--biru-tua);
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .gallery-info p {
+            color: var(--abu);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .gallery-line {
+            width: 48px;
+            height: 4px;
+            margin-top: 18px;
+            border-radius: 10px;
+            background: var(--kuning);
+            transition: width 0.3s;
+        }
+
+        .gallery-card:hover .gallery-line {
+            width: 85px;
+        }
+
+        /* BAGIAN PENUTUP */
+        .closing {
+            padding: 75px 5%;
+            text-align: center;
+            background: var(--biru-muda);
+        }
+
+        .closing-content {
+            max-width: 760px;
+            margin: auto;
+        }
+
+        .closing h2 {
+            margin-bottom: 18px;
+            color: var(--biru-tua);
+            font-size: clamp(26px, 4vw, 38px);
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .closing p {
+            margin-bottom: 28px;
+            color: var(--abu);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .closing-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 28px;
+            border-radius: 30px;
+            background: var(--biru);
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(22, 122, 252, 0.2);
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .closing-button:hover {
+            background: var(--biru-tua);
+            box-shadow: 0 12px 24px rgba(18, 100, 173, 0.25);
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 28px 5%;
+            text-align: center;
+            background: var(--biru-tua);
+            color: white;
+        }
+
+        .footer p {
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .footer span {
+            color: var(--kuning);
+            font-weight: 800;
+        }
+
+        /* ANIMASI SCROLL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE TABLET */
+        @media (max-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+            }
+
+            .gallery-image {
+                height: 230px;
+            }
+
+            .hero {
+                min-height: 390px;
+                padding: 80px 6%;
+            }
+        }
+
+        /* RESPONSIVE HP */
+        @media (max-width: 600px) {
+            .header-container {
+                min-height: 76px;
+                padding: 10px 4%;
+            }
+
+            .brand {
+                gap: 9px;
+            }
+
+            .brand img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .brand-text h2 {
+                font-size: 14px;
+            }
+
+            .brand-text p {
+                font-size: 10px;
+            }
+
+            .nav-menu a {
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 350px;
+                padding: 70px 6%;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+            .gallery-section {
+                padding: 65px 5%;
+            }
+
+            .section-heading {
+                margin-bottom: 32px;
+            }
+
+            .section-heading p {
+                font-size: 13px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 23px;
+            }
+
+            .gallery-image {
+                height: 250px;
+            }
+
+            .gallery-info {
+                padding: 20px;
+            }
+
+            .closing {
+                padding: 60px 6%;
+            }
+
+            .closing p {
+                font-size: 13px;
+            }
+        }
+
+        /* HORMATI PENGATURAN REDUKSI ANIMASI */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+
+            <a href="index.html" class="brand">
+                <img src="logo-sekolah.png" alt="Logo Sekolah Kristen Galatia">
+
+                <div class="brand-text">
+                    <h2>Galatia</h2>
+                    <p>BEKASI</p>
+                </div>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html">Beranda</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-label">SEKOLAH KRISTEN GALATIA</span>
+
+            <h1>
+                Galeri <span>Kegiatan</span>
+            </h1>
+
+            <p>
+                Setiap momen adalah bagian dari perjalanan belajar,
+                bertumbuh, dan meraih masa depan bersama Sekolah Kristen Galatia.
+            </p>
+        </div>
+    </section>
+
+    <!-- GALERI FOTO -->
+    <section class="gallery-section" id="galeri">
+
+        <div class="section-heading reveal">
+            <span class="section-label">MOMEN BERHARGA</span>
+
+            <h2>
+                Cerita dalam <span>Setiap Momen</span>
+            </h2>
+
+            <p>
+                Lihat berbagai kegiatan pembelajaran, kreativitas,
+                kebersamaan, dan pengalaman berharga peserta didik
+                Sekolah Kristen Galatia.
+            </p>
+        </div>
+
+        <div class="gallery-grid">
+
+            <!-- FOTO 1 -->
+            <article class="gallery-card reveal">
+                <div class="gallery-image">
+                    <span class="gallery-number">01</span>
+                    <img src="galeri1.jpg"
+                         alt="Kegiatan pembelajaran siswa"
+                         loading="lazy">
+                </div>
+                <div class="gallery-info">
+                    <h3>Kegiatan Pembelajaran</h3>
+                    <p>Belajar dengan aktif, menyenangkan, dan penuh semangat.</p>
+                    <div class="gallery-line"></div>
+                </div>
+            </article>
+
+            <!-- FOTO 2 -->
+            <article class="gallery-card reveal">
+                <div class="gallery-image">
+                    <span class="gallery-number">02</span>
+                    <img src="galeri2.jpg"
+                         alt="Kegiatan kreativitas siswa"
+                         loading="lazy">
+                </div>
+                <div class="gallery-info">
+                    <h3>Kreativitas Siswa</h3>
+                    <p>Mengembangkan ide, bakat, dan potensi setiap anak.</p>
+                    <div class="gallery-line"></div>
+                </div>
+            </article>
+
+            <!-- FOTO 3 -->
+            <article class="gallery-card reveal">
+                <div class="gallery-image">
+                    <span class="gallery-number">03</span>
+                    <img src="galeri3.jpg"
+                         alt="Kegiatan kebersamaan siswa"
+                         loading="lazy">
+                </div>
+                <div class="gallery-info">
+                    <h3>Kebersamaan</h3>
+                    <p>Membangun persahabatan dan kepedulian satu sama lain.</p>
+                    <div class="gallery-line"></div>
+                </div>
+            </article>
+
+            <!-- FOTO 4 -->
+            <article class="gallery-card reveal">
+                <div class="gallery-image">
+                    <span class="gallery-number">04</span>
+                    <img src="galeri4.jpg"
+                         alt="Kegiatan olahraga siswa"
+                         loading="lazy">
+                </div>
+                <div class="gallery-info">
+                    <h3>Olahraga dan Kesehatan</h3>
+                    <p>Menumbuhkan semangat, sportivitas, dan hidup sehat.</p>
+                    <div class="gallery-line"></div>
+                </div>
+            </article>
+
+            <!-- FOTO 5 -->
+            <article class="gallery-card reveal">
+                <div class="gallery-image">
+                    <span class="gallery-number">05</span>
+                    <img src="galeri5.jpg"
+                         alt="Kegiatan seni dan budaya"
+                         loading="lazy">
+                </div>
+                <div class="gallery-info">
+                    <h3>Seni dan Budaya</h3>
+                    <p>Memberi ruang bagi siswa untuk berkarya dan berekspresi.</p>
+                    <div class="gallery-line"></div>
+                </div>
+            </article>
+
+            <!-- FOTO 6 -->
+            <article class="gallery-card reveal">
+                <div class="gallery-image">
+                    <span class="gallery-number">06</span>
+                    <img src="galeri6.jpg"
+                         alt="Kegiatan perayaan sekolah"
+                         loading="lazy">
+                </div>
+                <div class="gallery-info">
+                    <h3>Perayaan Sekolah</h3>
+                    <p>Menciptakan kenangan indah dalam setiap perayaan.</p>
+                    <div class="gallery-line"></div>
+                </div>
+            </article>
+
+            <!-- FOTO 7 -->
+            <article class="gallery-card reveal">
+                <div class="gallery-image">
+                    <span class="gallery-number">07</span>
+                    <img src="galeri7.jpg"
+                         alt="Kegiatan belajar di luar kelas"
+                         loading="lazy">
+                </div>
+                <div class="gallery-info">
+                    <h3>Belajar dan Bereksplorasi</h3>
+                    <p>Mengenal lingkungan dan belajar dari pengalaman nyata.</p>
+                    <div class="gallery-line"></div>
+                </div>
+            </article>
+
+            <!-- FOTO 8 -->
+            <article class="gallery-card reveal">
+                <div class="gallery-image">
+                    <span class="gallery-number">08</span>
+                    <img src="galeri8.jpg"
+                         alt="Kegiatan karakter dan kerohanian"
+                         loading="lazy">
+                </div>
+                <div class="gallery-info">
+                    <h3>Pendidikan Karakter</h3>
+                    <p>Menumbuhkan kasih, disiplin, tanggung jawab, dan kepedulian.</p>
+                    <div class="gallery-line"></div>
+                </div>
+            </article>
+
+            <!-- FOTO 9 -->
+            <article class="gallery-card reveal">
+                <div class="gallery-image">
+                    <span class="gallery-number">09</span>
+                    <img src="galeri9.jpg"
+                         alt="Kenangan bersama warga sekolah"
+                         loading="lazy">
+                </div>
+                <div class="gallery-info">
+                    <h3>Kenangan Bersama</h3>
+                    <p>Menyimpan momen bermakna dalam perjalanan pendidikan.</p>
+                    <div class="gallery-line"></div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- BAGIAN PENUTUP -->
+    <section class="closing reveal">
+        <div class="closing-content">
+            <h2>
+                Mendidik dengan Kasih,<br>
+                Bertumbuh dengan Sukacita
+            </h2>
+
+            <p>
+                Bersama Sekolah Kristen Galatia, setiap anak mendapatkan
+                kesempatan untuk belajar, mengembangkan potensi, membangun
+                karakter, dan mempersiapkan masa depan.
+            </p>
+
+            <a href="index.html" class="closing-button">
+                Kembali ke Beranda &larr;
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>
+            &copy; 2026 <span>Sekolah Kristen Galatia</span> | Bekasi.
+            Semua Hak Dilindungi.
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT ANIMASI SCROLL -->
+    <script>
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12
+            });
+
+            revealElements.forEach(element => {
+                observer.observe(element);
+            });
+        } else {
+            revealElements.forEach(element => {
+                element.classList.add("show");
+            });
+        }
+    </script>
+
+</body>
+</html>

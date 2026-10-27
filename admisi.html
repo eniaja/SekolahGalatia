@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admisi & PPDB | Sekolah Kristen Galatia Bekasi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #27364B;
+            background: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --biru: #167AFC;
+            --biru-terang: #2196F3;
+            --biru-tua: #1264AD;
+            --biru-muda: #EAF6FF;
+            --kuning: #FFD65A;
+            --putih: #FFFFFF;
+            --teks: #27364B;
+            --abu: #64748B;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* HEADER */
+        .header {
+            width: 100%;
+            min-height: 88px;
+            padding: 14px 6%;
+            background: rgba(22, 122, 252, 0.97);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .logo {
+            width: 57px;
+            height: 57px;
+            object-fit: contain;
+            background: #FFFFFF;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        .brand-text h2 {
+            color: #FFFFFF;
+            font-size: 23px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            color: var(--kuning);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-top: 4px;
+        }
+
+        .nav a {
+            display: inline-block;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 30px;
+            transition: 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: rgba(255, 255, 255, 0.16);
+            color: var(--kuning);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 490px;
+            padding: 95px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(12, 74, 150, 0.88),
+                    rgba(22, 122, 252, 0.78)
+                ),
+                url("admisi-hero.jpg");
+
+            background-size: cover;
+            background-position: center;
+            color: #FFFFFF;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 1;
+            animation: muncul 1s ease both;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 9px 20px;
+            border-radius: 30px;
+            background: var(--kuning);
+            color: var(--biru-tua);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--kuning);
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.9;
+            color: #F0F7FF;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 800;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-kuning {
+            background: var(--kuning);
+            color: var(--biru-tua);
+        }
+
+        .btn-kuning:hover {
+            background: #FFFFFF;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-putih {
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+        }
+
+        .btn-putih:hover {
+            background: #FFFFFF;
+            color: var(--biru-tua);
+        }
+
+        /* SECTION UMUM */
+        section {
+            padding: 85px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 45px;
+        }
+
+        .section-label {
+            color: var(--biru);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 13px;
+        }
+
+        .section-heading h2 {
+            color: var(--biru-tua);
+            font-size: clamp(27px, 3.5vw, 38px);
+            font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 16px;
+        }
+
+        .section-heading p {
+            color: var(--abu);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* SAMBUTAN */
+        .sambutan {
+            background: #FFFFFF;
+        }
+
+        .sambutan-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .sambutan-text h2 {
+            color: var(--biru-tua);
+            font-size: clamp(27px, 3vw, 36px);
+            line-height: 1.4;
+            margin-bottom: 22px;
+        }
+
+        .sambutan-text p {
+            color: var(--abu);
+            font-size: 14px;
+            line-height: 2;
+            margin-bottom: 16px;
+        }
+
+        .sambutan-visual {
+            min-height: 340px;
+            border-radius: 25px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(22, 122, 252, 0.86),
+                    rgba(18, 100, 173, 0.92)
+                ),
+                url("admisi-hero.jpg") center / cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 35px;
+            box-shadow: 0 18px 40px rgba(18, 100, 173, 0.18);
+        }
+
+        .visual-content {
+            color: #FFFFFF;
+        }
+
+        .visual-content .visual-icon {
+            font-size: 58px;
+            margin-bottom: 20px;
+        }
+
+        .visual-content h3 {
+            color: var(--kuning);
+            font-size: 27px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .visual-content p {
+            color: #FFFFFF;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* JENJANG */
+        .jenjang {
+            background: linear-gradient(180deg, #EAF6FF, #F7FBFF);
+        }
+
+        .jenjang-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .jenjang-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 30px 22px;
+            text-align: center;
+            border: 1px solid #DCEEFF;
+            box-shadow: 0 8px 25px rgba(22, 122, 252, 0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .jenjang-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 16px 32px rgba(22, 122, 252, 0.13);
+        }
+
+        .jenjang-icon {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 20px;
+            border-radius: 22px;
+            background: var(--biru-muda);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+
+        .jenjang-card h3 {
+            color: var(--biru-tua);
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .jenjang-card p {
+            color: var(--abu);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .jenjang-tag {
+            display: inline-block;
+            background: #FFF5CD;
+            color: #8B6500;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            margin-top: 18px;
+        }
+
+        /* ALUR PENDAFTARAN */
+        .alur {
+            background: #FFFFFF;
+        }
+
+        .alur-list {
+            max-width: 850px;
+            margin: auto;
+            display: grid;
+            gap: 18px;
+        }
+
+        .alur-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            background: #FFFFFF;
+            border: 1px solid #DFEDFA;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 6px 20px rgba(39, 54, 75, 0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .alur-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(22, 122, 252, 0.09);
+        }
+
+        .alur-number {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--biru);
+            color: #FFFFFF;
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        .alur-item h3 {
+            color: var(--biru-tua);
+            font-size: 17px;
+            margin: 3px 0 9px;
+        }
+
+        .alur-item p {
+            color: var(--abu);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* PERSYARATAN */
+        .persyaratan {
+            background: linear-gradient(135deg, #167AFC, #1264AD);
+            color: #FFFFFF;
+        }
+
+        .persyaratan .section-label {
+            color: var(--kuning);
+        }
+
+        .persyaratan .section-heading h2 {
+            color: #FFFFFF;
+        }
+
+        .persyaratan .section-heading p {
+            color: #EAF4FF;
+        }
+
+        .syarat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .syarat-card {
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 18px;
+            padding: 27px;
+        }
+
+        .syarat-card h3 {
+            color: var(--kuning);
+            font-size: 18px;
+            margin-bottom: 17px;
+        }
+
+        .syarat-card ul {
+            list-style: none;
+        }
+
+        .syarat-card li {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #FFFFFF;
+            padding: 8px 0 8px 27px;
+            position: relative;
+        }
+
+        .syarat-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            color: var(--kuning);
+            font-weight: 800;
+        }
+
+        .syarat-note {
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.8;
+            color: #EAF4FF;
+            margin-top: 28px;
+        }
+
+        /* FAQ */
+        .faq {
+            background: #F7FBFF;
+        }
+
+        .faq-list {
+            max-width: 850px;
+            margin: auto;
+            display: grid;
+            gap: 14px;
+        }
+
+        .faq-item {
+            background: #FFFFFF;
+            border: 1px solid #DFEDFA;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 21px 24px;
+            color: var(--biru-tua);
+            font-size: 14px;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            color: var(--biru);
+            font-size: 25px;
+            line-height: 1;
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            padding: 0 24px 22px;
+            color: var(--abu);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 75px 7%;
+            background: #FFFFFF;
+        }
+
+        .cta-box {
+            max-width: 1100px;
+            margin: auto;
+            padding: 55px 35px;
+            border-radius: 28px;
+            text-align: center;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(22, 122, 252, 0.95),
+                    rgba(18, 100, 173, 0.97)
+                );
+            box-shadow: 0 15px 40px rgba(18, 100, 173, 0.18);
+        }
+
+        .cta-box h2 {
+            color: #FFFFFF;
+            font-size: clamp(26px, 4vw, 37px);
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        .cta-box h2 span {
+            color: var(--kuning);
+        }
+
+        .cta-box p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #EAF4FF;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .cta-box .btn {
+            margin-top: 27px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #102F59;
+            padding: 35px 7%;
+            text-align: center;
+            color: #D9E9FF;
+        }
+
+        .footer h3 {
+            color: #FFFFFF;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .footer h3 span {
+            color: var(--kuning);
+        }
+
+        .footer p {
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .footer a {
+            color: var(--kuning);
+            font-weight: 700;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            margin-top: 22px;
+            padding-top: 20px;
+        }
+
+        /* ANIMASI SCROLL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .jenjang-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .sambutan-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header {
+                padding: 12px 5%;
+                min-height: 75px;
+            }
+
+            .logo {
+                width: 47px;
+                height: 47px;
+            }
+
+            .brand {
+                gap: 9px;
+            }
+
+            .brand-text h2 {
+                font-size: 19px;
+            }
+
+            .brand-text p {
+                font-size: 9px;
+                letter-spacing: 2px;
+            }
+
+            .nav a {
+                font-size: 12px;
+                padding: 10px 13px;
+            }
+
+            .hero {
+                min-height: 440px;
+                padding: 75px 6%;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            section {
+                padding: 65px 6%;
+            }
+
+            .sambutan-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sambutan-visual {
+                min-height: 280px;
+            }
+
+            .syarat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .alur-item {
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .alur-number {
+                width: 43px;
+                height: 43px;
+                font-size: 18px;
+                border-radius: 13px;
+            }
+
+            .cta {
+                padding: 55px 6%;
+            }
+
+            .cta-box {
+                padding: 40px 22px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .jenjang-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 270px;
+            }
+
+            .nav a {
+                padding: 9px 11px;
+            }
+        }
+
+        /* PENGATURAN UNTUK PENGGUNA REDUKSI ANIMASI */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="index.html" class="brand" aria-label="Kembali ke Beranda">
+            <img src="logo-sekolah.png" alt="Logo Sekolah Kristen Galatia" class="logo">
+
+            <div class="brand-text">
+                <h2>Galatia</h2>
+                <p>BEKASI</p>
+            </div>
+        </a>
+
+        <nav class="nav">
+            <a href="index.html">Beranda</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-label">ADMISI & PPDB</span>
+
+            <h1>
+                Langkah Awal Menuju
+                <span>Masa Depan Gemilang</span>
+            </h1>
+
+            <p>
+                Selamat datang di halaman admisi Sekolah Kristen Galatia Bekasi.
+                Kami percaya setiap anak memiliki potensi yang istimewa untuk
+                bertumbuh, belajar, dan meraih masa depan yang lebih baik.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#jenjang" class="btn btn-kuning">
+                    Lihat Jenjang Pendidikan
+                </a>
+
+                <a href="#alur" class="btn btn-putih">
+                    Alur Pendaftaran
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAMBUTAN ADMISI -->
+    <section class="sambutan">
+        <div class="sambutan-grid">
+            <div class="sambutan-text reveal">
+                <div class="section-label">PENERIMAAN PESERTA DIDIK BARU</div>
+
+                <h2>
+                    Mendidik dengan Kasih,
+                    Bertumbuh dengan Sukacita
+                </h2>
+
+                <p>
+                    Sekolah Kristen Galatia Bekasi menyambut keluarga yang
+                    ingin menjadi bagian dari lingkungan pendidikan yang
+                    mendukung perkembangan anak secara menyeluruh.
+                </p>
+
+                <p>
+                    Kami berkomitmen mendampingi peserta didik untuk
+                    mengembangkan pengetahuan, karakter, kreativitas,
+                    keterampilan, serta sikap saling menghargai.
+                </p>
+
+                <p>
+                    Silakan mengenal jenjang pendidikan, mempelajari alur
+                    pendaftaran, dan menghubungi pihak sekolah untuk memperoleh
+                    informasi resmi mengenai penerimaan peserta didik baru.
+                </p>
+
+                <a href="#alur" class="btn btn-kuning"
+                   style="background:#167AFC;color:#FFFFFF;">
+                    Pelajari Pendaftaran
+                </a>
+            </div>
+
+            <div class="sambutan-visual reveal">
+                <div class="visual-content">
+                    <div class="visual-icon">🎓</div>
+
+                    <h3>Tempat Anak Bertumbuh dan Berkarya</h3>
+
+                    <p>
+                        Lingkungan belajar yang mendukung potensi,
+                        karakter, dan semangat belajar setiap anak.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JENJANG PENDIDIKAN -->
+    <section class="jenjang" id="jenjang">
+        <div class="section-heading reveal">
+            <div class="section-label">PILIHAN PENDIDIKAN</div>
+
+            <h2>Temukan Jenjang Pendidikan yang Tepat</h2>
+
+            <p>
+                Kenali pilihan jenjang pendidikan di Sekolah Kristen Galatia.
+                Informasi ketersediaan penerimaan dan ketentuan setiap jenjang
+                dapat dikonfirmasi langsung kepada pihak sekolah.
+            </p>
+        </div>
+
+        <div class="jenjang-grid">
+
+            <article class="jenjang-card reveal">
+                <div class="jenjang-icon">🧸</div>
+
+                <h3>Taman Kanak-Kanak</h3>
+
+                <p>
+                    Mendukung perkembangan awal anak melalui pengalaman
+                    belajar yang menyenangkan, kreatif, dan sesuai tahap
+                    perkembangannya.
+                </p>
+
+                <span class="jenjang-tag">TK</span>
+            </article>
+
+            <article class="jenjang-card reveal">
+                <div class="jenjang-icon">📚</div>
+
+                <h3>Sekolah Dasar</h3>
+
+                <p>
+                    Membangun fondasi pengetahuan, keterampilan dasar,
+                    kemandirian, dan kebiasaan belajar yang positif.
+                </p>
+
+                <span class="jenjang-tag">SD</span>
+            </article>
+
+            <article class="jenjang-card reveal">
+                <div class="jenjang-icon">🔬</div>
+
+                <h3>Sekolah Menengah Pertama</h3>
+
+                <p>
+                    Mengembangkan kemampuan berpikir kritis, kreativitas,
+                    tanggung jawab, dan keterampilan sosial peserta didik.
+                </p>
+
+                <span class="jenjang-tag">SMP</span>
+            </article>
+
+            <article class="jenjang-card reveal">
+                <div class="jenjang-icon">🚀</div>
+
+                <h3>Sekolah Menengah Atas</h3>
+
+                <p>
+                    Mempersiapkan peserta didik untuk melanjutkan pendidikan,
+                    mengembangkan potensi diri, dan merancang masa depan.
+                </p>
+
+                <span class="jenjang-tag">SMA</span>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ALUR PENDAFTARAN -->
+    <section class="alur" id="alur">
+        <div class="section-heading reveal">
+            <div class="section-label">LANGKAH PENDAFTARAN</div>
+
+            <h2>Bagaimana Cara Mendaftar?</h2>
+
+            <p>
+                Berikut alur umum yang dapat dijadikan panduan awal.
+                Prosedur resmi, jadwal, dan mekanisme pendaftaran mengikuti
+                ketentuan Sekolah Kristen Galatia.
+            </p>
+        </div>
+
+        <div class="alur-list">
+
+            <div class="alur-item reveal">
+                <div class="alur-number">01</div>
+
+                <div>
+                    <h3>Hubungi Pihak Sekolah</h3>
+
+                    <p>
+                        Tanyakan informasi penerimaan, ketersediaan kelas,
+                        jadwal pendaftaran, serta ketentuan untuk jenjang
+                        yang dipilih.
+                    </p>
+                </div>
+            </div>
+
+            <div class="alur-item reveal">
+                <div class="alur-number">02</div>
+
+                <div>
+                    <h3>Dapatkan Informasi dan Formulir</h3>
+
+                    <p>
+                        Mintalah penjelasan mengenai formulir pendaftaran,
+                        dokumen yang diperlukan, dan cara pengumpulan berkas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="alur-item reveal">
+                <div class="alur-number">03</div>
+
+                <div>
+                    <h3>Lengkapi Persyaratan</h3>
+
+                    <p>
+                        Siapkan dokumen sesuai daftar persyaratan resmi
+                        dari sekolah. Pastikan seluruh data diisi dengan
+                        benar dan lengkap.
+                    </p>
+                </div>
+            </div>
+
+            <div class="alur-item reveal">
+                <div class="alur-number">04</div>
+
+                <div>
+                    <h3>Ikuti Tahapan Seleksi Jika Ada</h3>
+
+                    <p>
+                        Ikuti wawancara, observasi, asesmen, atau tahapan
+                        lain apabila dipersyaratkan untuk jenjang yang dipilih.
+                    </p>
+                </div>
+            </div>
+
+            <div class="alur-item reveal">
+                <div class="alur-number">05</div>
+
+                <div>
+                    <h3>Konfirmasi Hasil dan Daftar Ulang</h3>
+
+                    <p>
+                        Peroleh informasi hasil penerimaan, ketentuan
+                        administrasi, dan langkah daftar ulang melalui
+                        pihak sekolah.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PERSYARATAN -->
+    <section class="persyaratan" id="persyaratan">
+        <div class="section-heading reveal">
+            <div class="section-label">DOKUMEN PENDAFTARAN</div>
+
+            <h2>Persiapkan Dokumen yang Diperlukan</h2>
+
+            <p>
+                Daftar berikut merupakan gambaran umum dokumen yang mungkin
+                diminta. Persyaratan sebenarnya perlu dikonfirmasi kepada
+                pihak sekolah sesuai jenjang dan tahun penerimaan.
+            </p>
+        </div>
+
+        <div class="syarat-grid">
+
+            <div class="syarat-card reveal">
+                <h3>📋 Dokumen Calon Peserta Didik</h3>
+
+                <ul>
+                    <li>Formulir pendaftaran yang telah diisi</li>
+                    <li>Akta kelahiran atau dokumen identitas anak</li>
+                    <li>Kartu Keluarga</li>
+                    <li>Pasfoto sesuai ketentuan sekolah, jika diminta</li>
+                    <li>Dokumen pendidikan sebelumnya untuk jenjang lanjutan</li>
+                </ul>
+            </div>
+
+            <div class="syarat-card reveal">
+                <h3>👨‍👩‍👧 Dokumen Orang Tua atau Wali</h3>
+
+                <ul>
+                    <li>Identitas orang tua atau wali</li>
+                    <li>Nomor telepon dan informasi kontak aktif</li>
+                    <li>Data alamat tempat tinggal</li>
+                    <li>Dokumen tambahan sesuai ketentuan sekolah</li>
+                    <li>Bukti pembayaran administrasi jika dipersyaratkan</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="syarat-note reveal">
+            Catatan: Jangan melakukan pembayaran atau menyerahkan dokumen
+            sensitif melalui kontak yang belum terverifikasi. Pastikan
+            seluruh ketentuan diperoleh dari pihak resmi sekolah.
+        </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-heading reveal">
+            <div class="section-label">INFORMASI UNTUK ORANG TUA</div>
+
+            <h2>Pertanyaan yang Sering Diajukan</h2>
+
+            <p>
+                Beberapa hal yang dapat ditanyakan sebelum memulai
+                proses pendaftaran peserta didik baru.
+            </p>
+        </div>
+
+        <div class="faq-list">
+
+            <details class="faq-item reveal">
+                <summary>Kapan pendaftaran peserta didik baru dibuka?</summary>
+
+                <div class="faq-answer">
+                    Jadwal penerimaan dapat berbeda setiap tahun ajaran.
+                    Silakan hubungi pihak Sekolah Kristen Galatia untuk
+                    mengetahui jadwal pembukaan, batas pendaftaran,
+                    dan ketersediaan tempat.
+                </div>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>Apakah pendaftaran tersedia untuk semua jenjang?</summary>
+
+                <div class="faq-answer">
+                    Informasi penerimaan untuk TK, SD, SMP, dan SMA perlu
+                    dikonfirmasi sesuai ketersediaan kelas serta ketentuan
+                    penerimaan pada tahun ajaran yang berlaku.
+                </div>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>Bagaimana cara mengetahui biaya pendidikan?</summary>
+
+                <div class="faq-answer">
+                    Mintalah rincian biaya resmi dari pihak sekolah.
+                    Tanyakan komponen biaya pendaftaran, uang pangkal
+                    jika ada, biaya pendidikan, serta biaya lain yang
+                    mungkin berlaku.
+                </div>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>Apakah orang tua dapat berkonsultasi sebelum mendaftar?</summary>
+
+                <div class="faq-answer">
+                    Orang tua dapat menanyakan kepada pihak sekolah mengenai
+                    program pendidikan, proses penerimaan, persyaratan,
+                    dan informasi lain yang diperlukan sebelum menentukan
+                    pilihan.
+                </div>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary>Bagaimana jika saya membutuhkan informasi lebih lanjut?</summary>
+
+                <div class="faq-answer">
+                    Silakan kembali ke halaman Beranda dan gunakan informasi
+                    kontak resmi sekolah yang tersedia di sana. Pastikan
+                    jadwal, persyaratan, dan informasi biaya telah dikonfirmasi
+                    sebelum melanjutkan pendaftaran.
+                </div>
+            </details>
+
+        </div>
+    </section>
+
+    <!-- AJAKAN PENDAFTARAN -->
+    <section class="cta">
+        <div class="cta-box reveal">
+            <h2>
+                Mari Bertumbuh Bersama
+                <span>Galatia</span>
+            </h2>
+
+            <p>
+                Langkah pendidikan yang baik dimulai dengan informasi yang tepat.
+                Kenali lingkungan belajar kami dan hubungi sekolah untuk
+                memperoleh informasi penerimaan peserta didik baru.
+            </p>
+
+            <a href="index.html#kontak" class="btn btn-kuning">
+                Hubungi Sekolah
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h3>Sekolah Kristen <span>Galatia</span></h3>
+
+        <p>Bekasi, Jawa Barat</p>
+        <p>Mendidik dengan Kasih, Bertumbuh dengan Sukacita</p>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; <span id="tahun"></span>
+                Sekolah Kristen Galatia Bekasi. Semua Hak Dilindungi.
+            </p>
+
+            <p>
+                <a href="index.html">Kembali ke Beranda</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Tahun otomatis pada footer
+        document.getElementById("tahun").textContent =
+            new Date().getFullYear();
+
+        // Animasi saat elemen masuk ke layar
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(
+                (entries, observerInstance) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                            observerInstance.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+            revealElements.forEach((element) => {
+                observer.observe(element);
+            });
+        } else {
+            revealElements.forEach((element) => {
+                element.classList.add("show");
+            });
+        }
+    </script>
+
+</body>
+</html>
